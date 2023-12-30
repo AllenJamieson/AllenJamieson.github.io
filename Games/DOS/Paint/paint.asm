@@ -144,11 +144,7 @@ paint_display:
 		call paint_position
 		jmp paint_display_loop
 	to_image:
-		mov ah, 0
-		mov al, show_curser
-		mov bl, 2
-		div bl
-		mov show_curser, ah
+		mov show_curser, 1
 		jmp paint_display_loop
 	left:
 		cmp bl, 0
