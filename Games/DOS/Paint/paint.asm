@@ -16,7 +16,7 @@ DATA SEGMENT
 	
 ; File management
 	handle		dw ?
-	file_name	db 11, 15 dup(?)	; n characters and a CR for max and n+5 for the dup
+	file_name	db 25, 25 dup(?)	; n characters and a CR for max and n and a terminate for the dup
 
 DATA ENDS
 
@@ -144,7 +144,11 @@ paint_display:
 		call paint_position
 		jmp paint_display_loop
 	to_image:
-		mov show_curser, 1
+		mov ah, 0
+		mov al, show_curser
+		mov bl, 2
+		div bl
+		mov show_curser, ah
 		jmp paint_display_loop
 	left:
 		cmp bl, 0
@@ -177,14 +181,6 @@ get_file:						; Gets the name of the file
 		mov ch, 0
 		add cl, 2
 		mov si, cx
-		mov file_name[si], '.'
-		inc si
-		mov file_name[si], 't'
-		inc si
-		mov file_name[si], 'x'
-		inc si
-		mov file_name[si], 't'
-		inc si
 		mov file_name[si], 0
 		ret
 
