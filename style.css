@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+}
+header {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+header a {
+    font-size: 20px;
+}
+
+ul {
+    border: 2px solid black;
+    list-style-type: none;
+    margin: 2%;
+    width: 50%;
+}
+
+li {
+    border: 2px solid black;
+    margin: 2%;
+    padding: 1%;
+}
+
+li a {
+    margin: 5%;
+}
+
+p {
+    font-size: 20px;
+}
