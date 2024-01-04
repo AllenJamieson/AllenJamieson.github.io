@@ -53,7 +53,6 @@ for (let prod = 0; prod < product_list.length; prod++) {
             display = document.createElement('div')
             display.setAttribute('id', "display_product");
             display.innerHTML = product_list[prod].name;
-            display.innerHTML += "There"
             document.body.append(display);
         }
     });
