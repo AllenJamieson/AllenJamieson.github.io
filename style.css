@@ -3,11 +3,20 @@
     padding: 0;
     background-color: grey;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 header {
+    width: 100%;
     border-bottom: 2px solid black;
     display: flex;
-    justify-content: space-between;
-    padding: 2%;
+    justify-content: space-around;
+    padding: 1%;
 }
 
 a {
@@ -19,15 +28,15 @@ header a {
     font-size: 20px;
 }
 
-ul {
+.groups {
     border: 2px solid black;
-    list-style-type: none;
     margin: 2%;
     width: 50%;
 }
 
 li {
     border: 2px solid black;
+    list-style-type: none;
     margin: 2%;
     padding: 1%;
 }
@@ -38,4 +47,13 @@ li a {
 
 p {
     font-size: 20px;
+}
+
+#display_product {
+    position: fixed;
+    top: 10%;
+    background-color: darkgrey;
+    height: 80%;
+    width: 75%;
+    border: 2px solid black;
 }
