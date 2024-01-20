@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    width: 98%;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+header a {
+    font-size: 20px;
+}
+
+.groups {
+    border: 2px solid black;
+    margin: 2%;
+    width: 50%;
+}
+
+li {
+    border: 2px solid black;
+    list-style-type: none;
+    margin: 2%;
+    padding: 1%;
+}
+
+li a {
+    margin: 5%;
+}
+
+p {
+    font-size: 20px;
+}
+
+#display_product {
+    position: fixed;
+    top: 5%;
+    background-color: darkgrey;
+    height: 90%;
+    width: 75%;
+    border: 2px solid black;
+}
