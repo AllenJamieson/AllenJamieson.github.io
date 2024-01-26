@@ -4,32 +4,27 @@ let game_list = [
     {
         name        : "Donsol",
         description : "",
-        image       : "",
-        download    : ""
+        image       : ""
     },
     {
         name        : "Paint",
-        description : "",
-        image       : "",
-        download    : ""
+        description : "This is a simple system for the DOSBOX where you can move a curser with wasd and shade with 01234",
+        image       : ""
     },
     {
         name        : "Donsol",
         description : "",
-        image       : "",
-        download    : ""
+        image       : ""
     },
     {
         name        : "Image Filter",
-        description : "",
-        image       : "",
-        download    : ""
+        description : "Simple image filter with display max 50 images allowed",
+        image       : ""
     },
     {
         name        : "Puzzle",
-        description : "",
-        image       : "",
-        download    : ""
+        description : "Select an image and play a puzzle where you swap sections of an image to recreate",
+        image       : ""
     }
 ];
 
