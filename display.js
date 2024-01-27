@@ -47,7 +47,7 @@ for (let prod = 0; prod < product_list.length; prod++) {
         if(display == null) {
             display = document.createElement('div')
             display.setAttribute('id', "display_product");
-            display.innerHTML = product_list[prod].name;
+            display.innerHTML = product_list[prod].name + `</br>` + product_list[prod].description;
             document.body.append(display);
         }
     });
