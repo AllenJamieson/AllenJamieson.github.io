@@ -43,8 +43,9 @@ switch(url) {
 let display = null;
 
 for (let prod = 0; prod < product_list.length; prod++) {
-    product[prod].addEventListener('click', _=> {
-        if(display == null) {
+    product[prod].addEventListener('click', event=> {
+        console.log(event.target.outerHTML.slice(0, 7));
+        if(display == null && event.target.outerHTML.slice(0, 7) != '<a href') {
             display = document.createElement('div')
             display.setAttribute('id', "display_product");
             display.innerHTML = product_list[prod].name + `</br>` + product_list[prod].description;

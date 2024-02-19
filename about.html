@@ -14,15 +14,30 @@
     </header>
     <br>
     <p>
-        Gender: Man <br>
-        Birth City: Vancouver BC <br>
+        Gender: Man (he/him)<br>
+        Birth City: Vancouver BC<br>
         <a href="mailto:grallieson@proton.me">Email</a><br>
 
-        I like to produce items, games, and stories. I whittle but am not good at it yet. The programs I write tend to be in Java, masm but I would like to work on nes and Wii based games. My hope is for my content to be enjoyed by many.
+        I like to produce items, games, and stories. I whittle but am not good at it yet. The programs I write tend to be in Java, masm. My hope is for my content to be enjoyed by many.
     </p>
     <p>
-        Other pages to visit:
+        <br><br>
+        Grandparent's Website:
         <a href="https://alsartemporium.weebly.com">Al's Art Emporium</a>
     </p>
+    <script>
+        var playing = false
+        var intro = new Audio('Intro.mp3')
+        function play_pause() {
+            if(!playing) intro.play()
+            else {
+                intro.pause()
+                intro.currentTime = 0
+            }
+            playing = !playing
+        }
+    </script>
+    <br>
+    <input type="button" value="Random Voicing Intro" onclick="play_pause()"/>
 </body>
 </html>
