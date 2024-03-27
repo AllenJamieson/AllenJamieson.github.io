@@ -146,6 +146,7 @@ temp_deck_display:
 		jne deck_display_loop
 		ret
 
+; TODO repeating cards
 set_current_hand:
 		cmp deck_count, 4
 		jl less_cards
@@ -165,9 +166,9 @@ set_current_hand:
 		je set_hand_loop
 		mov si, 0
 	check_hand:
-		mov bl, current_hand[si]
-		inc si
 		mov bh, current_hand[si]
+		inc si
+		mov bl, current_hand[si]
 		cmp bx, ax
 		je set_hand_loop
 		inc si
@@ -296,6 +297,24 @@ defend:							; Alter the defense to be al
 		mov current_lowest, 0
 		ret
 
+remove_card:	; dx is the card
+		mov si, 0
+	remove_card_loop:
+		mov ah, deck[si]
+		inc si
+		mov al, deck[si]
+		inc si
+		cmp dx, ax
+		je end_remove
+		cmp si, 108
+		jne remove_card_loop
+	end_remove:
+		dec si
+		mov deck[si], 0
+		dec si
+		mov deck[si], 0
+		ret
+
 select_card:					; al is the card position
 		shl al, 1
 		mov ah, 0
@@ -309,6 +328,7 @@ select_card:					; al is the card position
 		inc si
 		mov dl, current_hand[si]
 		mov current_hand[si], '-'
+		call remove_card
 		dec deck_count
 
 action_of_card:					; dx is the card; dh is face and dl is the suit
