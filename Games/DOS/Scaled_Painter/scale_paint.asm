@@ -390,6 +390,8 @@ start_painter:
 start:
 		mov ax, DATA
 		mov ds, ax
+		mov ax, myStack
+		mov ss, ax
 		
 		call set_video
 		

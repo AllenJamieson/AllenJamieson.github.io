@@ -383,6 +383,8 @@ get_char:				; returns al
 start:
 		mov ax, DATA
 		mov ds, ax
+		mov ax, myStack
+		mov ss, ax
 		
 		lea di, map1
 		call load_map
