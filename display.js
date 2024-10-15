@@ -3,17 +3,21 @@ let product = document.getElementsByClassName("product");
 let game_list = [
     {
         name        : "Donsol",
-        description : "",
+        description : "This is a copy of donsol that is written in MASM for DOS consoles",
         image       : ""
     },
     {
+        name        : "Black and White Paint",
+        description : "This is a simple system for the DOSBOX where you can move a curser with wasd and shade with 01234"
+    },
+    {
         name        : "Paint",
-        description : "This is a simple system for the DOSBOX where you can move a curser with wasd and shade with 01234",
+        description : "This is a simple system for the DOSBOX where you can move a curser with wasd and color with 0-9, a-f",
         image       : ""
     },
     {
         name        : "Donsol",
-        description : "",
+        description : "This is a copy of Donsol written in Java",
         image       : ""
     },
     {
@@ -24,6 +28,11 @@ let game_list = [
     {
         name        : "Puzzle",
         description : "Select an image and play a puzzle where you swap sections of an image to recreate",
+        image       : ""
+    },
+    {
+        name        : "Slots",
+        description : "Simple slots game",
         image       : ""
     }
 ];
@@ -44,12 +53,11 @@ let display = null;
 for (let prod = 0; prod < product_list.length; prod++) {
     product[prod].addEventListener('click', event=> {
         if(display == null && event.target.outerHTML.slice(0, 7) != '<a href') {
-            console.log("test");
             display = document.createElement('div')
             display.setAttribute('id', "display_product");
             switch(url) {
                 case 'games':
-                    display.innerHTML = product_list[prod].name + `</br>` + product_list[prod].description;
+                    display.innerHTML = `<h3>` + product_list[prod].name + `</h3>` + `</br>` + product_list[prod].description;
                     break;
             }
             document.body.append(display);
