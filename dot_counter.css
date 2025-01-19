@@ -1,0 +1,13 @@
+#player, #canvas, #img_capture, #dot_label {
+    position: absolute;
+}
+
+#player, #canvas {
+    top: 10%;
+    left: 0;
+}
+
+#img_capture {
+    bottom: 2%;
+    padding: 10px;
+}

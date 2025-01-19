@@ -34,6 +34,11 @@ let game_list = [
         name        : "Slots",
         description : "Simple slots game",
         image       : ""
+    },
+    {
+        name        : "Color Cluster",
+        description : "Is a console system that converts an image into k colors. run the jar file with the path, k, output name without fyletype and the filetype",
+        image       : ""
     }
 ];
 
