@@ -31,25 +31,20 @@ function capture() {
     }
 }
 
-function count_dots(img, width, height) { // TODO Param tweek and see if this is the same
-    cv.resize(img, img, new cv.Size(width/2, height/2), cv.INTER_AREA);
+async function count_dots(img, width, height) { // TODO Param tweek and see if this is the same
+    //cv.resize(img, img, new cv.Size(width/4, height/4), cv.INTER_AREA);
     cv.cvtColor(img, img, cv.COLOR_RGB2BGR);
 
     let params = new cv.SimpleBlobDetector().getParams()
-    //params['thresholdStep'] = 5
+    params['thresholdStep'] = 5
     let detector = new cv.SimpleBlobDetector(params)
     let keypoints = new cv.KeyPointVector()
-    detector.detect(img, keypoints)
-    console.log(keypoints);
-    console.log(cv);
-    
+    detector.detect(img, keypoints)    
     dot_lbl.textContent = keypoints.size();
-// TODO Show the dots
-
-
+    cv.drawKeypoints(img, keypoints, img)
 
 // TODO use the original image and grow the key?
-    cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
+    //cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
     cv.cvtColor(img, img, cv.COLOR_RGB2BGR)
     cv.imshow(canvas, img)
 }
