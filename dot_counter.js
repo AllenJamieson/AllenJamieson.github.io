@@ -11,7 +11,7 @@ let scale = 1;
 let color = 4;
 
 access_camera();
-setTimeout(init, 1000); // Creates a delay so that the opencv loads completely
+setTimeout(init, 5000); // Creates a delay so that the opencv loads completely
 settings_div.style.visibility = "hidden"
 settings_btn.addEventListener("click", _=> settings_div.style.visibility = "visible");
 submit.addEventListener("click", settings);
@@ -22,8 +22,20 @@ function init() {
     detector = new cv.SimpleBlobDetector();
 }
 
+// https://stackoverflow.com/questions/72420950/how-to-switch-between-front-camera-and-rear-camera-in-javascript
+function handleVideo(cameraFacing) {
+    const constraints = {
+        video: {
+            facingMode: {
+                exact: cameraFacing
+            }
+        }
+    }
+    return constraints;
+}
+
 function access_camera() { // TODO check to see how to use outer camera
-    navigator.mediaDevices.getUserMedia({video:true})
+    navigator.mediaDevices.getUserMedia(handleVideo("environment"))
     .then(stream => {
         player.srcObject = stream
         let {width, height} = stream.getVideoTracks()[0].getSettings()
@@ -55,22 +67,9 @@ async function count_dots(img, width, height) {
     detector.detect(img, keypoints);
     dot_lbl.textContent = keypoints.size();
     cv.drawKeypoints(img, keypoints, img);
-    cv.drawKeypoints(img, keypoints, img);
 
-    cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
     cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
     cv.imshow(canvas, img)
-}
-
-function settings() {
-    // TODO create the settings for the parameters
-    console.log("HI");
-    let parameters = settings_div.getElementsByTagName("input")
-    
-
-
-    detector = new cv.SimpleBlobDetector(params);
-    settings_div.style.visibility = "hidden"
 }
 
 function settings() {
