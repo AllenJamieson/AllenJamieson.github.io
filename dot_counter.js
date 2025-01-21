@@ -53,12 +53,6 @@ async function count_dots(img, width, height) {
 // TODO Other parameters if the image needs to be with things that I am unaware of
     let keypoints = new cv.KeyPointVector();
     detector.detect(img, keypoints);
-async function count_dots(img, width, height) {
-    cv.resize(img, img, new cv.Size(width/scale, height/scale), cv.INTER_AREA);
-    cv.cvtColor(img, img, color);
-// TODO Other parameters if the image needs to be with things that I am unaware of
-    let keypoints = new cv.KeyPointVector();
-    detector.detect(img, keypoints);
     dot_lbl.textContent = keypoints.size();
     cv.drawKeypoints(img, keypoints, img);
     cv.drawKeypoints(img, keypoints, img);
