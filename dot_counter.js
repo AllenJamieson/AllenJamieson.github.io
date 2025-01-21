@@ -38,6 +38,7 @@ function access_camera() { // TODO check to see how to use outer camera
     navigator.mediaDevices.getUserMedia(handleVideo("environment"))
     .then(stream => {
         player.srcObject = stream
+        player.play();
         let {width, height} = stream.getVideoTracks()[0].getSettings()
         player.width = width;
         player.height = height;
