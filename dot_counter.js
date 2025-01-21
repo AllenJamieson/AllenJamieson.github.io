@@ -2,9 +2,25 @@ let player = document.getElementById("player");
 let img_capture_btn = document.getElementById("img_capture");
 let dot_lbl = document.getElementById("dot_label");
 let canvas = document.getElementById("canvas");
+let settings_btn = document.getElementById("settings_btn");
+let settings_div = document.getElementById("settings");
+let submit = settings_div.getElementsByTagName("button")[0];
+
+let params, detector;
+let scale = 1;
+let color = 4;
 
 access_camera();
-img_capture_btn.addEventListener("click", capture);
+setTimeout(init, 1000); // Creates a delay so that the opencv loads completely
+settings_div.style.visibility = "hidden"
+settings_btn.addEventListener("click", _=> settings_div.style.visibility = "visible");
+submit.addEventListener("click", settings);
+
+function init() {
+    img_capture_btn.addEventListener("click", capture);
+    params = new cv.SimpleBlobDetector().getParams();
+    detector = new cv.SimpleBlobDetector();
+}
 
 function access_camera() { // TODO check to see how to use outer camera
     navigator.mediaDevices.getUserMedia({video:true})
@@ -31,20 +47,45 @@ function capture() {
     }
 }
 
-async function count_dots(img, width, height) { // TODO Param tweek and see if this is the same
-    //cv.resize(img, img, new cv.Size(width/4, height/4), cv.INTER_AREA);
-    cv.cvtColor(img, img, cv.COLOR_RGB2BGR);
-
-    let params = new cv.SimpleBlobDetector().getParams()
-    params['thresholdStep'] = 5
-    let detector = new cv.SimpleBlobDetector(params)
-    let keypoints = new cv.KeyPointVector()
-    detector.detect(img, keypoints)    
+async function count_dots(img, width, height) {
+    cv.resize(img, img, new cv.Size(width/scale, height/scale), cv.INTER_AREA);
+    cv.cvtColor(img, img, color);
+// TODO Other parameters if the image needs to be with things that I am unaware of
+    let keypoints = new cv.KeyPointVector();
+    detector.detect(img, keypoints);
+async function count_dots(img, width, height) {
+    cv.resize(img, img, new cv.Size(width/scale, height/scale), cv.INTER_AREA);
+    cv.cvtColor(img, img, color);
+// TODO Other parameters if the image needs to be with things that I am unaware of
+    let keypoints = new cv.KeyPointVector();
+    detector.detect(img, keypoints);
     dot_lbl.textContent = keypoints.size();
-    cv.drawKeypoints(img, keypoints, img)
+    cv.drawKeypoints(img, keypoints, img);
+    cv.drawKeypoints(img, keypoints, img);
 
-// TODO use the original image and grow the key?
-    //cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
-    cv.cvtColor(img, img, cv.COLOR_RGB2BGR)
+    cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
+    cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
     cv.imshow(canvas, img)
+}
+
+function settings() {
+    // TODO create the settings for the parameters
+    console.log("HI");
+    let parameters = settings_div.getElementsByTagName("input")
+    
+
+
+    detector = new cv.SimpleBlobDetector(params);
+    settings_div.style.visibility = "hidden"
+}
+
+function settings() {
+    // TODO create the settings for the parameters
+    console.log("HI");
+    let parameters = settings_div.getElementsByTagName("input")
+    
+
+
+    detector = new cv.SimpleBlobDetector(params);
+    settings_div.style.visibility = "hidden"
 }
