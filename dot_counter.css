@@ -11,3 +11,8 @@
     bottom: 2%;
     padding: 10px;
 }
+
+#settings {
+    background-color: aliceblue;
+    z-index: 2;
+}
