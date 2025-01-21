@@ -9,6 +9,13 @@ let submit = settings_div.getElementsByTagName("button")[0];
 let params, detector;
 let scale = 1;
 let color = 4;
+let settings_btn = document.getElementById("settings_btn");
+let settings_div = document.getElementById("settings");
+let submit = settings_div.getElementsByTagName("button")[0];
+
+let params, detector;
+let scale = 1;
+let color = 4;
 
 access_camera();
 setTimeout(init, 1000); // Creates a delay so that the opencv loads completely
@@ -53,11 +60,30 @@ async function count_dots(img, width, height) {
 // TODO Other parameters if the image needs to be with things that I am unaware of
     let keypoints = new cv.KeyPointVector();
     detector.detect(img, keypoints);
+async function count_dots(img, width, height) {
+    cv.resize(img, img, new cv.Size(width/scale, height/scale), cv.INTER_AREA);
+    cv.cvtColor(img, img, color);
+// TODO Other parameters if the image needs to be with things that I am unaware of
+    let keypoints = new cv.KeyPointVector();
+    detector.detect(img, keypoints);
     dot_lbl.textContent = keypoints.size();
+    cv.drawKeypoints(img, keypoints, img);
     cv.drawKeypoints(img, keypoints, img);
 
     cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
+    cv.resize(img, img, new cv.Size(width, height), cv.INTER_LINEAR)
     cv.imshow(canvas, img)
+}
+
+function settings() {
+    // TODO create the settings for the parameters
+    console.log("HI");
+    let parameters = settings_div.getElementsByTagName("input")
+    
+
+
+    detector = new cv.SimpleBlobDetector(params);
+    settings_div.style.visibility = "hidden"
 }
 
 function settings() {
