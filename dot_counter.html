@@ -21,18 +21,31 @@
         <button type="button" id="img_capture">O</button>
     </div>
     <div id="settings">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
+        <div>blobColor <input type="text" class="numeric_setting"></div>
+
+        <div>collectContours <input type="checkbox" class="bool_setting"></div>
+        <div>filterByArea <input type="checkbox" class="bool_setting" checked></div>
+        <div>filterByCircularity <input type="checkbox" class="bool_setting"></div>
+        <div>filterByColor <input type="checkbox" class="bool_setting" checked></div>
+        <div>filterByConvexity <input type="checkbox" class="bool_setting" checked></div>
+        <div>filterByInertia <input type="checkbox" class="bool_setting" checked></div>
+
+        <div>maxArea <input type="text" class="numeric_setting"></div>
+        <div>maxCircularity <input type="text" class="numeric_setting"></div>
+        <div>maxConvexity <input type="text" class="numeric_setting"></div>
+        <div>maxInertiaRatio <input type="text" class="numeric_setting"></div>
+        <div>maxThreshold <input type="text" class="numeric_setting"></div>
+        <div>minArea <input type="text" class="numeric_setting"></div>
+        <div>minCircularity <input type="text" class="numeric_setting"></div>
+        <div>minConvexity <input type="text" class="numeric_setting"></div>
+        <div>minDistBetweenBlobs <input type="text" class="numeric_setting"></div>
+        <div>minInertiaRatio <input type="text" class="numeric_setting"></div>
+        <div>minRepeatability <input type="text" class="numeric_setting"></div>
+        <div>minThreshold <input type="text" class="numeric_setting"></div>
+        <div>thresholdStep <input type="text" class="numeric_setting"></div>
+
+        <div>Scaling <input type="text" id="scaler"></div>
+
         <button type="button">Submit</button>
         <!-- Place that into information and set params-->
     </div>
