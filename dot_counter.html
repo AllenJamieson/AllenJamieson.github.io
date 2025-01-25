@@ -11,12 +11,12 @@
 </head>
 <body>
     <header>
-        <a href="index.html">Back</a>
+        <a href="downloads.html">Back</a>
         <button id="settings_btn">Settings</button>
 </header>
     <div>
         <h3 id="dot_label">0</h3>
-        <video id="player" autoplay></video>
+        <video id="player" autoplay muted></video>
         <canvas id="canvas"></canvas>
         <button type="button" id="img_capture">O</button>
     </div>
@@ -45,9 +45,9 @@
         <div>thresholdStep <input type="text" class="numeric_setting"></div>
 
         <div>Scaling <input type="text" id="scaler"></div>
+        <div>Color <input type="text" id="color"></div>
 
         <button type="button">Submit</button>
-        <!-- Place that into information and set params-->
     </div>
     <script src="dot_counter.js"></script>
 

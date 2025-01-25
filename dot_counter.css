@@ -13,6 +13,15 @@
 }
 
 #settings {
-    background-color: aliceblue;
+    background-color: peru;
+    display: flex;
+    flex-wrap: wrap;
     z-index: 2;
+    padding: 10px;
+}
+
+input {
+    width: 100px;
+    margin-bottom: 5px;
+    margin-right: 20px;
 }

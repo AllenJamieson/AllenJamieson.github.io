@@ -19,8 +19,7 @@ let numeric_settings = [
 ];
 
 let params, detector;
-let scale = 1;
-let color = 4;
+let scale = 1, color = 4; // TODO color poorly written
 
 access_camera();
 setTimeout(init, 1000); // Creates a delay so that the opencv loads completely
@@ -32,29 +31,31 @@ function init() {
     img_capture_btn.addEventListener("click", capture);
     params = new cv.SimpleBlobDetector().getParams();
     detector = new cv.SimpleBlobDetector();
+    console.log(cv);
     console.log(params);
 }
 
 // https://stackoverflow.com/questions/72420950/how-to-switch-between-front-camera-and-rear-camera-in-javascript
-function handleVideo(cameraFacing) {
-    const constraints = {
+// https://www.digitalocean.com/community/tutorials/front-and-rear-camera-access-with-javascripts-getusermedia
+function handleVideo() { // TODO Video issues still there
+    return {
         video: {
-            facingMode: {
-                exact: cameraFacing
-            }
+            video:true,
+            width: { max: window.innerWidth },
+            height: { max: window.innerHeight },
+            facingMode: { exact: "environment" }
         }
-    }
-    return constraints;
+    };
 }
 
-function access_camera() { // TODO check to see how to use outer camera
-    navigator.mediaDevices.getUserMedia(handleVideo("environment"))
+function access_camera() {
+    navigator.mediaDevices.getUserMedia(handleVideo())
     .then(stream => {
         player.srcObject = stream;
         let {width, height} = stream.getVideoTracks()[0].getSettings();
         player.width = width;
         player.height = height;
-    });
+    }).catch( _=> alert("Need a forward facing camera") );
 }
 
 function capture() {
@@ -74,14 +75,13 @@ function capture() {
 
 async function count_dots(img, width, height) {
     cv.resize(img, img, new cv.Size(width/scale, height/scale), cv.INTER_AREA);
-    cv.cvtColor(img, img, color);
+    //cv.cvtColor(img, img, color);
 // TODO Other parameters if the image needs to be with things that I am unaware of
     let keypoints = new cv.KeyPointVector();
     detector.detect(img, keypoints);
     dot_lbl.textContent = keypoints.size();
     cv.drawKeypoints(img, keypoints, img);
-
-    cv.resize(img, img, new cv.Size(width/4, height/4), cv.INTER_LINEAR);
+    cv.resize(img, img, new cv.Size(width/2, height/2), cv.INTER_LINEAR);
     cv.imshow(canvas, img);
 }
 
@@ -89,17 +89,20 @@ function settings() {
     let in_params = settings_div.getElementsByClassName("numeric_setting");
     let bool_params = settings_div.getElementsByClassName("bool_setting");
     
-    for (let bs = 0; bs < numeric_settings.length; bs++) {
+    for (let bs = 0; bs < numeric_settings.length; bs++)
         if(in_params[bs].value != "" && !isNaN(in_params[bs].value))
             params[numeric_settings[bs]] = parseFloat(in_params[bs].value);
-    }
 
     for (let ns = 0; ns < bool_settings.length; ns++)
         params[bool_settings[ns]] = bool_params[ns].checked;
     
     detector = new cv.SimpleBlobDetector(params);
     settings_div.style.visibility = "hidden";
+
     let scale_div = document.getElementById("scaler");
-    if(scale_div.value != "" && !isNaN(scale_div.value)) scale = parseInt(scale_div.value)
+    if(scale_div.value != "" && !isNaN(scale_div.value)) scale = parseInt(scale_div.value);
+    let color_div = document.getElementById("color");
+    if(scale_div.value != "" && !isNaN(scale_div.value)) color = parseInt(color_div.value);
+
     console.log(params);
 }
