@@ -48,7 +48,6 @@ function init() {
 function handleVideo() { // TODO Video issues still there
     return {
         video: {
-            video:true,
             width: { max: window.innerWidth },
             height: { max: window.innerHeight },
             facingMode: { exact: "environment" }
@@ -57,6 +56,7 @@ function handleVideo() { // TODO Video issues still there
 }
 
 function access_camera() {
+    navigator.mediaDevices.getUserMedia({video:true});
     navigator.mediaDevices.getUserMedia(handleVideo())
     .then(stream => {
         player.srcObject = stream;
