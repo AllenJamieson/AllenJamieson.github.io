@@ -36,9 +36,13 @@ let game_list = [
         image       : ""
     },
     {
-        name        : "Color Cluster",
-        description : "Is a console system that converts an image into k colors. run the jar file with the path, k, output name without fyletype and the filetype",
+        name        : "Color Cluster", // TODO make it a display?
+        description : "Is a console system that converts an image into k colors. run the jar file with the path, k, output name without filetype and the filetype",
         image       : ""
+    },
+    {
+        name        : "Dot Counter",
+        description : "This is a dot counter made to count domino dots"
     }
 ];
 
@@ -50,7 +54,7 @@ let url = document.title.split(' ')[0].toLowerCase();
 console.log(url);
 switch(url) {
     case 'games':
-        product_list = game_list
+        product_list = game_list;
         break;
 }
 let display = null;
@@ -58,7 +62,7 @@ let display = null;
 for (let prod = 0; prod < product_list.length; prod++) {
     product[prod].addEventListener('click', event=> {
         if(display == null && event.target.outerHTML.slice(0, 7) != '<a href') {
-            display = document.createElement('div')
+            display = document.createElement('div');
             display.setAttribute('id', "display_product");
             switch(url) {
                 case 'games':

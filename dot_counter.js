@@ -19,20 +19,28 @@ let numeric_settings = [
 ];
 
 let params, detector;
-let scale = 1, color = 4; // TODO color poorly written
+let scale = 1, color = -1;
 
 access_camera();
-setTimeout(init, 1000); // Creates a delay so that the opencv loads completely
-settings_div.style.visibility = "hidden"
+setTimeout(init, 2500); // Creates a delay so that the opencv loads completely
+
+settings_div.style.visibility = "hidden";
 settings_btn.addEventListener("click", _=> settings_div.style.visibility = "visible");
 submit.addEventListener("click", settings);
 
 function init() {
-    img_capture_btn.addEventListener("click", capture);
-    params = new cv.SimpleBlobDetector().getParams();
-    detector = new cv.SimpleBlobDetector();
-    console.log(cv);
-    console.log(params);
+    try {
+        img_capture_btn.addEventListener("click", capture);
+        params = new cv.SimpleBlobDetector().getParams();
+        detector = new cv.SimpleBlobDetector();
+        console.log(cv);
+        console.log(params);
+    } catch(err) {
+        img_capture_btn.disabled = true;
+        settings_btn.disabled = true;
+    // TODO alert causes the timeout to show a violation in the handler
+        alert("There is an issue connecting to opencv. Try refreshing, if it still is an issue contact me.");
+    }
 }
 
 // https://stackoverflow.com/questions/72420950/how-to-switch-between-front-camera-and-rear-camera-in-javascript
@@ -55,7 +63,10 @@ function access_camera() {
         let {width, height} = stream.getVideoTracks()[0].getSettings();
         player.width = width;
         player.height = height;
-    }).catch( _=> alert("Need a forward facing camera") );
+    }).catch(_=> {
+        img_capture_btn.disabled = true;
+        alert("Need a forward facing camera to continue.");
+    });
 }
 
 function capture() {
@@ -75,7 +86,7 @@ function capture() {
 
 async function count_dots(img, width, height) {
     cv.resize(img, img, new cv.Size(width/scale, height/scale), cv.INTER_AREA);
-    //cv.cvtColor(img, img, color);
+    if(color != -1) cv.cvtColor(img, img, color);
 // TODO Other parameters if the image needs to be with things that I am unaware of
     let keypoints = new cv.KeyPointVector();
     detector.detect(img, keypoints);
