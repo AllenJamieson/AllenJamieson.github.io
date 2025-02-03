@@ -11,6 +11,7 @@
     bottom: 2%;
     padding: 10px;
     font-weight: bold;
+    border-radius: 100%;
 }
 
 #settings {

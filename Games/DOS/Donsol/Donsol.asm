@@ -146,7 +146,6 @@ temp_deck_display:
 		jne deck_display_loop
 		ret
 
-; TODO repeating cards
 set_current_hand:
 		cmp deck_count, 4
 		jl less_cards

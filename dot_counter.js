@@ -45,7 +45,7 @@ function init() {
 
 // https://stackoverflow.com/questions/72420950/how-to-switch-between-front-camera-and-rear-camera-in-javascript
 // https://www.digitalocean.com/community/tutorials/front-and-rear-camera-access-with-javascripts-getusermedia
-function handleVideo() { // TODO Video issues still there
+function handleVideo() {
     return {
         video: {
             width: { max: window.innerWidth },
@@ -56,7 +56,6 @@ function handleVideo() { // TODO Video issues still there
 }
 
 function access_camera() {
-    navigator.mediaDevices.getUserMedia({video:true});
     navigator.mediaDevices.getUserMedia(handleVideo())
     .then(stream => {
         player.srcObject = stream;
