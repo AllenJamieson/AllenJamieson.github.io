@@ -3,7 +3,7 @@ let product = document.getElementsByClassName("product");
 let game_list = [
     {
         name        : "Donsol",
-        description : "This is a copy of donsol that is written in MASM for DOS consoles",
+        description : "This is a copy of donsol that is written in MASM for DOS consoles. https://wiki.xxiivv.com/site/donsol.html",
         image       : ""
     },
     {
@@ -17,7 +17,7 @@ let game_list = [
     },
     {
         name        : "Donsol",
-        description : "This is a copy of Donsol written in Java",
+        description : "This is a copy of Donsol written in Java. https://wiki.xxiivv.com/site/donsol.html",
         image       : ""
     },
     {

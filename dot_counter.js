@@ -55,7 +55,7 @@ function handleVideo() {
     };
 }
 
-function access_camera() {
+function access_camera() { // TODO Camera orientation issues
     navigator.mediaDevices.getUserMedia(handleVideo())
     .then(stream => {
         player.srcObject = stream;
