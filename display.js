@@ -39,10 +39,6 @@ let game_list = [
         name        : "Color Cluster", // TODO make it a display?
         description : "Is a console system that converts an image into k colors. run the jar file with the path, k, output name without filetype and the filetype",
         image       : ""
-    },
-    {
-        name        : "Dot Counter",
-        description : "This is a dot counter made to count domino dots"
     }
 ];
 

@@ -5,6 +5,14 @@ let canvas = document.getElementById("canvas");
 let settings_btn = document.getElementById("settings_btn");
 let settings_div = document.getElementById("settings");
 let submit = settings_div.getElementsByTagName("button")[0];
+let cameraOptions = document.querySelector('.video-options>select');
+let constraints = {
+    video: {
+        width: { max: window.innerWidth },
+        height: { max: window.innerHeight },
+        //facingMode: { exact: "environment" }
+    }
+};
 
 let bool_settings = [
     'collectContours', 'filterByArea', 'filterByCircularity',
@@ -31,6 +39,7 @@ submit.addEventListener("click", settings);
 function init() {
     try {
         img_capture_btn.addEventListener("click", capture);
+        cameraOptions.addEventListener("change", setup_camera);
         params = new cv.SimpleBlobDetector().getParams();
         detector = new cv.SimpleBlobDetector();
         console.log(cv);
@@ -45,19 +54,26 @@ function init() {
 
 // https://stackoverflow.com/questions/72420950/how-to-switch-between-front-camera-and-rear-camera-in-javascript
 // https://www.digitalocean.com/community/tutorials/front-and-rear-camera-access-with-javascripts-getusermedia
-function handleVideo() {
-    return {
-        video: {
-            width: { max: window.innerWidth },
-            height: { max: window.innerHeight },
-            facingMode: { exact: "environment" }
-        }
-    };
+
+async function access_camera() { // TODO Camera orientation issues
+    let vid = (await navigator.mediaDevices.enumerateDevices()).filter(device => device.kind === 'videoinput');
+    console.log(vid);
+    alert(vid[0].label)
+    options = vid.map(videoDevice => {
+        return `<option value="${videoDevice.deviceId}">${videoDevice.label}</option>`;
+    });
+    setup_camera();
 }
 
-function access_camera() { // TODO Camera orientation issues
-    navigator.mediaDevices.getUserMedia({video:true});
-    navigator.mediaDevices.getUserMedia(handleVideo())
+function setup_camera() {
+    cameraOptions.innerHTML = options.join('');
+    let updated_constraints = {
+        ...constraints,
+        deviceId: {
+            exact: cameraOptions.value
+        }
+    }; 
+    navigator.mediaDevices.getUserMedia(updated_constraints)
     .then(stream => {
         player.srcObject = stream;
         let {width, height} = stream.getVideoTracks()[0].getSettings();
@@ -65,7 +81,7 @@ function access_camera() { // TODO Camera orientation issues
         player.height = height;
     }).catch(_=> {
         img_capture_btn.disabled = true;
-        alert("Need a forward facing camera to continue.");
+        alert("Failed to update camera.");
     });
 }
 
@@ -113,7 +129,7 @@ function settings() {
     let scale_div = document.getElementById("scaler");
     if(scale_div.value != "" && !isNaN(scale_div.value)) scale = parseInt(scale_div.value);
     let color_div = document.getElementById("color");
-    if(scale_div.value != "" && !isNaN(scale_div.value)) color = parseInt(color_div.value);
+    if(color_div.value != "" && !isNaN(scale_div.value)) color = parseInt(color_div.value);
 
     console.log(params);
 }
