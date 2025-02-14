@@ -6,7 +6,7 @@
     <title>Dot Counter</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dot_counter.css">
-    <link rel="shortcut icon" href="Dot Counter Icon 1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Dot Counter Icon 1.png">
     <script src="https://docs.opencv.org/4.10.0/opencv.js"></script>
 </head>
 <body>
@@ -14,18 +14,18 @@
         <a href="downloads.html">Back</a>
         <button id="settings_btn">Settings</button>
     </header>
-    <div class="video-options">
-        <select name="" id="" class="custom-select">
-            <option value="">Select camera</option>
+    <div>
+        <select id="custom-select">
         </select>
+        <button id="select">Select</button>
     </div>
     <div>
         <h3 id="dot_label">0</h3>
-        <video id="player" autoplay muted></video>
+        <video id="player" muted></video>
         <canvas id="canvas"></canvas>
         <button type="button" id="img_capture">O</button>
     </div>
-    <div id="settings">
+    <div id="settings" style="visibility: hidden;">
         <div>blobColor <input type="text" class="numeric_setting"></div>
 
         <div>collectContours <input type="checkbox" class="bool_setting"></div>
@@ -55,6 +55,6 @@
         <button type="button">Submit</button>
     </div>
     <script src="dot_counter.js"></script>
-
+    <script src="camera.js"></script>
 </body>
 </html>
