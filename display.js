@@ -3,7 +3,7 @@ let product = document.getElementsByClassName("product");
 let game_list = [
     {
         name        : "Donsol",
-        description : "This is a copy of donsol that is written in MASM for DOS consoles. https://wiki.xxiivv.com/site/donsol.html",
+        description : "This is a copy of donsol that is written in MASM for DOS consoles. Credit for the game idea goes to <a href=https://wiki.xxiivv.com/site/donsol.html>xxiivv</a>",
         image       : ""
     },
     {
@@ -17,7 +17,7 @@ let game_list = [
     },
     {
         name        : "Donsol",
-        description : "This is a copy of Donsol written in Java. https://wiki.xxiivv.com/site/donsol.html",
+        description : "This is a copy of Donsol written in Java. Credit for the game idea goes to <a href=https://wiki.xxiivv.com/site/donsol.html>xxiivv</a>",
         image       : ""
     },
     {
@@ -38,6 +38,11 @@ let game_list = [
     {
         name        : "Color Cluster", // TODO make it a display?
         description : "Is a console system that converts an image into k colors. run the jar file with the path, k, output name without filetype and the filetype",
+        image       : ""
+    },
+    {
+        name        : "Factorio Image Writer",
+        description : "This will grab an image and convert it into a factorio blueprint",
         image       : ""
     }
 ];
