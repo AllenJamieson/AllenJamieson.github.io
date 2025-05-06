@@ -36,8 +36,8 @@ let game_list = [
         image       : ""
     },
     {
-        name        : "Color Cluster", // TODO make it a display?
-        description : "Is a console system that converts an image into k colors. run the jar file with the path, k, output name without filetype and the filetype",
+        name        : "Color Cluster",
+        description : "Converts an image into k colors.",
         image       : ""
     },
     {
