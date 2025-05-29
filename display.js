@@ -44,6 +44,11 @@ let game_list = [
         name        : "Factorio Image Writer",
         description : "This will grab an image and convert it into a factorio blueprint",
         image       : ""
+    },
+    {
+        name        : "Tile Matcher",
+        description : "Simple token matcher with the tokens from https://jinhzaki.itch.io/minerals-pack-free-32x32",
+        image       : ""
     }
 ];
 
