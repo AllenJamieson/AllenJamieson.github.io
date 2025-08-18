@@ -16,6 +16,11 @@ let game_list = [
         image       : ""
     },
     {
+        name        : "RPG",
+        description : "An RPG with simple movement and sprites",
+        image       : ""
+    },
+    {
         name        : "Donsol",
         description : "This is a copy of Donsol written in Java. Credit for the game idea goes to <a href=https://wiki.xxiivv.com/site/donsol.html>xxiivv</a>",
         image       : ""
@@ -48,6 +53,11 @@ let game_list = [
     {
         name        : "Tile Matcher",
         description : "Simple token matcher with the tokens from https://jinhzaki.itch.io/minerals-pack-free-32x32",
+        image       : ""
+    },
+    {
+        name        : "Accordian Game",
+        description : "A solitaire game where you match either suit or face. Draw cards and the moves are leftward 1 or 3 spaces",
         image       : ""
     }
 ];
