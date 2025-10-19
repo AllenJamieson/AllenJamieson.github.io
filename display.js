@@ -59,6 +59,10 @@ let game_list = [
         name        : "Accordian Game",
         description : "A solitaire game where you match either suit or face. Draw cards and the moves are leftward 1 or 3 spaces",
         image       : ""
+    },
+    {
+        name        : "Calendar Creator",
+        description : "This is an app that can make a calendar. You will need a Folder 'Calendar' next to the jar file and a 'special_days.txt' file as well. The special_days.txt must be written with a tag followed by newline then the name:dd/mm/yyyy"
     }
 ];
 
