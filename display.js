@@ -37,7 +37,7 @@ let game_list = [
     },
     {
         name        : "Slots",
-        description : "Simple slots game",
+        description : "Simple slots game with icons designed using Krita (GPL v3)",
         image       : ""
     },
     {
