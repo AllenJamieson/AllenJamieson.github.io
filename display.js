@@ -62,7 +62,7 @@ let game_list = [
     },
     {
         name        : "Calendar Creator",
-        description : "This is an app that can make a calendar. You will need a Folder 'Calendar' next to the jar file and a 'special_days.txt' file as well. The special_days.txt must be written with a tag followed by newline then the name:dd/mm/yyyy"
+        description : "This is an app that can make a calendar. You will need a txt file named 'special_days.txt' if you want to add birthdays and holidays. Formatting the file is found below"
     }
 ];
 

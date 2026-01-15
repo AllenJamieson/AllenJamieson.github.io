@@ -1,3 +1,8 @@
 Birthday
 
-John Doe:20/05/2002
+John Doe:20/05/2002 <-- dd/mm/yyyy formatting
+Alex:15/04/2020:X : <-- This must be updated for the dead
+
+Holiday <-- dd/mm
+
+Halloween:31/10:halloween.jpg : <-- Image is not needed and must be the path or the name if next to the jar file
