@@ -52,7 +52,7 @@ let game_list = [
     },
     {
         name        : "Tile Matcher",
-        description : "Simple token matcher with the tokens from https://jinhzaki.itch.io/minerals-pack-free-32x32",
+        description : "Simple token matcher with the tokens from <a href=https://jinhzaki.itch.io/minerals-pack-free-32x32>Itsumi Len</a>",
         image       : ""
     },
     {
@@ -62,7 +62,13 @@ let game_list = [
     },
     {
         name        : "Calendar Creator",
-        description : "This is an app that can make a calendar. You will need a txt file named 'special_days.txt' if you want to add birthdays and holidays. Formatting the file is found below"
+        description : "This is an app that can make a calendar. You will need a txt file named 'special_days.txt' if you want to add birthdays and holidays. Formatting the file is found in the txt file.<br>"
+                    + "Image editing section you can add images with left click on the panel, move around by dragging the panel or wasd if the panel is the focus.<br>" 
+                    + "The image can (f)lip, be (del)eted, and scaled. Reset focus with (esc). You can see a smaller version with space if the panel is the focus"
+    }, // Defold will use both wasm.js and WebAssembly
+    {
+        name        : "Chess",
+        description : "This is chess written in Java. The icons are from <a href=https://greenchess.net/info.php?item=downloads>Green Chess</a>"
     }
 ];
 
