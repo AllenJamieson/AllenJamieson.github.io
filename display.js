@@ -26,11 +26,6 @@ let game_list = [
         image       : ""
     },
     {
-        name        : "Image Filter",
-        description : "Simple image filter with display max 50 images allowed",
-        image       : ""
-    },
-    {
         name        : "Puzzle",
         description : "Select an image and play a puzzle where you swap sections of an image to recreate",
         image       : ""
@@ -38,11 +33,6 @@ let game_list = [
     {
         name        : "Slots",
         description : "Simple slots game with icons designed using Krita (GPL v3)",
-        image       : ""
-    },
-    {
-        name        : "Color Cluster",
-        description : "Converts an image into k colors.",
         image       : ""
     },
     {
@@ -69,6 +59,10 @@ let game_list = [
     {
         name        : "Chess",
         description : "This is chess written in Java. The icons are from <a href=https://greenchess.net/info.php?item=downloads>Green Chess</a>"
+    },
+    {
+        name        : "Image Filter",
+        description : "This is a newer system for adding filters on an image combining from earlier versions that are now deleted."
     }
 ];
 
