@@ -9,42 +9,25 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="graview2.svg" alt="home" height="50px"></a>
-        <a href="downloads.html">Games</a>
-        <a href="stories.html">Stories</a>
+        <a href="index.html"><img src="graview2.svg" alt="home"></a>
+        <a href="content.html">Content</a>
         <a href="">About</a>
     </header>
     <br>
-    <p>
+    <p id="about">
         Gender: Man (he/him)<br>
         Birth City: Vancouver BC<br>
         <a href="mailto:grallieson@proton.me">Email</a><br>
-        I graduated with a Bacholour of Science in ACS. My interests are creating small programs and writting. The programming languages I tend to lean towatd are Java, SQL, Python, and MASM. I am also trying Defold engine for better portability in game development. My hope is for my content to be enjoyed by many.
-        <br><!-- TODO -->
-        Everything found on this site is for entertainment purposes only. They are ment to be enjoyed and should not be used for political movements or educational.
+        I graduated with a Bacholour of Science in ACS. My interests are creating small programs and writting. The programming languages I tend to lean towatd are Java, SQL, Python, and MASM. My hope is for my content to be enjoyed by many.
+        <br>
+        Everything found on this site is for entertainment purposes only. They are meant to be enjoyed and are not meant to be taken seriously.
     </p>
-    <p>
-        <h2>Ads</h2>
-        <div class="ad">
-            <h3>Grandparent's Website:</h3>
-            <a href="https://alsartemporium.weebly.com"><img src="als_emporium_poster_icon.jpg" alt="alsartemporium" height="200px" width="200px"><p>alsartemporium</p></a>
-        </div>
-    </p>
-    <script>
-        let playing = false
-        let intro = new Audio('Intro.mp3');
-        function play_pause() {
-            if(!playing) intro.play();
-            else {
-                intro.pause();
-                intro.currentTime = 0;
-            }
-            playing = !playing;
-        }
-    </script>
     <br>
-    <input type="button" value="Random Voicing Intro" onclick="play_pause()"/>
-
+    <h2>Ads</h2>
+    <a href="https://alsartemporium.weebly.com" class="ad">
+        <img src="als_emporium_poster_icon.jpg" alt="alsartemporium">
+        <p>alsartemporium</p>
+    </a>
     <p id="license">
         License: <br>
         As of March 1st, 2025,

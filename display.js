@@ -65,7 +65,7 @@ let game_list = [
         description : "This is a newer system for adding filters on an image combining from earlier versions that are now deleted."
     }
 ];
-
+//
 let img_list = [];
 
 let product_list = [];
