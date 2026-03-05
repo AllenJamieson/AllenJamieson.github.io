@@ -13,6 +13,10 @@ body {
     background-color: gray;
 }
 
+h2 {
+    text-decoration: underline;
+}
+
 header {
     display: flex;
     justify-content: space-around;
@@ -35,46 +39,6 @@ p {
 a {
     color: blue;
     text-decoration: none;
-    margin: 5px;
-}
-a:hover {
-    color: white;
-}
-
-.stories {
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-.groups {
-    border: 2px solid black;
-    margin: 1%;
-    width: 75%;
-}
-
-li {
-    border: 2px solid black;
-    list-style-type: none;
-    margin: 2%;
-    padding: 1%;
-}
-
-li a {
-    margin: 5%;
-}
-li:hover { /* TODO Have it so on hover it shows the links*/
-    background-color: darkgray;
-    padding: 2%;
-}
-
-#display_product {
-    position: fixed;
-    top: 5%;
-    height: 50%;
-    width: 50%;
-    border: 2px solid black;
 }
 
 #about {
@@ -108,4 +72,58 @@ li:hover { /* TODO Have it so on hover it shows the links*/
 }
 #license:hover {
     opacity: 1;
+}
+
+#table_of_contents {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+#table_of_contents a {
+    font-size: larger;
+}
+
+#up {
+    position: fixed;
+    background-color: lightgray;
+    color: black;
+    padding: 10px;
+    font-size: 24px;
+    bottom: 1%;
+    right: 1%;
+}
+
+#stories {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    justify-self: center;
+    width: 75%;
+    margin: 2%;
+    margin-bottom: 100%;
+}
+
+.group {
+    border: 1px solid black;
+    margin: 2%;
+    padding: 5px;
+}
+
+#programming {
+    width: 90%;
+    justify-self: center;
+    border: 1px solid black;
+}
+#programming p {
+    font-size: small;
+    border-bottom: 1px solid black;
+    margin: 20px 0;
+}
+#programming a {
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-around;
 }

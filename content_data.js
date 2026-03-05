@@ -9,6 +9,7 @@ programming=[
             {
                 name: "Compiler (No Licese Found)",
                 ref: "https://medium.com/@axayjha/getting-started-with-masm-8086-assembly-c625478265d8"
+                // https://www.mediafire.com/file/mm7cjztce9efj4w/8086.zip
             }
         ],
         content:[
@@ -38,7 +39,7 @@ programming=[
                 links: ["RPG.EXE", "rpg.asm"]
             }
         ]
-    },
+    }, // DOS
     {
         name: "Java",
         links: [
@@ -86,10 +87,21 @@ programming=[
             },
             {
                 name: "Rock Paper Scissors",
-                description: "This is a tester project that was to teach me a little about Java Sockets."
+                description: "This is a tester project that was to teach me a little about Java Sockets.",
+                parent_path: "RPS",
+                links: [
+                    {
+                        name: "Server",
+                        ref: "RPS.java"
+                    },
+                    {
+                        name: "Client",
+                        ref: "Player.java"
+                    }
+                ]
             }
         ]
-    },
+    }, // Java
     {
         name: "Defold",
         links: [
@@ -107,9 +119,18 @@ programming=[
             }
         ],
         content: [
-
+            {
+                name: "Gravity Jumper",
+                description: "A simple platformer that you can control gravity",
+                types: ["Web"]
+            },
+            {
+                name: "Toy Catcher",
+                description: "Catch as much toys while avoiding the coal then hear the winning songs",
+                types: ["Web", "Android"]
+            }
         ]
-    }
+    } // Defold
 ]
 
 stories=[
