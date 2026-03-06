@@ -3,7 +3,10 @@
     padding: 0;
     font-family: monospace;
     transition-duration: 0.3s;
+    cursor: default;
 }
+
+html { scrollbar-width: none; }
 
 body {
     display: flex;
@@ -13,9 +16,15 @@ body {
     background-color: gray;
 }
 
-h2 {
-    text-decoration: underline;
+h2 { text-decoration: underline; }
+
+p { font-size: large; }
+
+a {
+    color: blue;
+    text-decoration: none;
 }
+a:hover { color: white; }
 
 header {
     display: flex;
@@ -25,105 +34,9 @@ header {
     height: 75px;
     width: 100%;
 }
-header img {
-    height: 50px;
-}
-header a {
-    font-size: 20px;
-}
-
-p {
-    font-size: large;
-}
-
-a {
-    color: blue;
-    text-decoration: none;
-}
-
-#about {
-    width: 75%;
-}
-
-.ad {
-    position: relative;
-    width: 20%;
-}
-.ad p {
-    position: absolute;
-    left: 5%;
-    bottom: 5%;
-    color: darkgray;
-}
-.ad img {
-    width: 100%;
-    aspect-ratio: 1;
-}
-.ad img:hover {
-    opacity: 75%;
-}
-
-#license {
-    padding: 20px;
-    margin: 20px 5%;
-    border: 1px solid black;
-    background-color: tomato;
-    opacity: 0.33;
-}
-#license:hover {
-    opacity: 1;
-}
-
-#table_of_contents {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5%;
-}
-#table_of_contents a {
-    font-size: larger;
-}
-
-#up {
-    position: fixed;
-    background-color: lightgray;
-    color: black;
-    padding: 10px;
-    font-size: 24px;
-    bottom: 1%;
-    right: 1%;
-}
-
-#stories {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    justify-self: center;
-    width: 75%;
-    margin: 2%;
-    margin-bottom: 100%;
-}
-
-.group {
-    border: 1px solid black;
-    margin: 2%;
-    padding: 5px;
-}
-
-#programming {
-    width: 90%;
-    justify-self: center;
-    border: 1px solid black;
-}
-#programming p {
-    font-size: small;
-    border-bottom: 1px solid black;
-    margin: 20px 0;
-}
-#programming a {
-    padding: 10px;
-}
-
-.item {
-    display: flex;
-    justify-content: space-around;
+header a { font-size: 20px; }
+header img { height: 50px; }
+header img:hover {
+    opacity: 0.75;
+    height: 60px;
 }

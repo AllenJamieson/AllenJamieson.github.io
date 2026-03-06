@@ -1,4 +1,3 @@
-let content = document.getElementById("content")
 let programming_div = document.getElementById("programming")
 let stories_div = document.getElementById("stories")
 
@@ -7,7 +6,7 @@ for (let p = 0; p < programming.length; p++) {
     programming_div.innerHTML += `<h3>${program_name.name}</h3>`
     for (let l = 0; l < program_name.links.length; l++) {
         let link = program_name.links[l];
-        programming_div.innerHTML += `<a href='${link.name}'>${link.name}</a>`
+        programming_div.innerHTML += `<a href='${link.ref}'>${link.name}</a>`
     }
     item_list = document.createElement('div')
     item_list.className = 'group'
@@ -34,8 +33,8 @@ for (let p = 0; p < programming.length; p++) {
                 }
             break;
             case "Defold":
+                let name = item.name.replace(' ', '')
                 for (let t = 0; t < item.types.length; t++) {
-                    let name = item.name.replace(' ', '')
                     switch (item.types[t]) {
                         case "Web":
                             item_div.innerHTML += `<a href='Games/Defold/${name}/index.html'>Play</a>`
@@ -52,7 +51,6 @@ for (let p = 0; p < programming.length; p++) {
         item_list.innerHTML += `<p>${item.description}</p>`
     }
     programming_div.append(item_list)
-
 }
 
 for (let s = 0; s < stories.length; s++) {

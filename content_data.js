@@ -75,7 +75,7 @@ programming=[
             },
             {
                 name: "Calendar Creator",
-                description: "This is an app that can make a calendar. You will need a txt file named 'special_days.txt' if you want to add birthdays and holidays. Formatting the file is found in the txt file.<br>Image editing section you can add images with left click on the panel, move around by dragging the panel or wasd if the panel is the focus.<br>The image can (f)lip, be (del)eted, and scaled. Reset focus with (esc). You can see a smaller version with (space) if the panel is the focus"
+                description: "This is an app that can make a calendar. You will need a txt file named <a href='Games/Java/CalendarCreator/special_days.txt'>special_days.txt</a> if you want to add birthdays and holidays. Formatting the file is found in the txt file.<br>Image editing section you can add images with left click on the panel, move around by dragging the panel or wasd if the panel is the focus.<br>The image can (f)lip, be (del)eted, and scaled. Reset focus with (esc). You can see a smaller version with (space) if the panel is the focus"
             },
             {
                 name: "Chess",
