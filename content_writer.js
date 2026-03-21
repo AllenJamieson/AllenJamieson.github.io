@@ -24,7 +24,7 @@ for (let p = 0; p < programming.length; p++) {
                 if(item.links) {
                     for (let l = 0; l < item.links.length; l++) {
                         let link = item.links[l];
-                        item_div.innerHTML += `<a href='.Games/Java/${item.parent_path}/${link.ref}'>${link.name}</a>`
+                        item_div.innerHTML += `<a href='Games/Java/${item.parent_path}/${link.ref}'>${link.name}</a>`
                     }
                 } else {
                     let name = item.name.replace(' ', '')

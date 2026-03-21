@@ -99,6 +99,25 @@ programming=[
                         ref: "Player.java"
                     }
                 ]
+            },
+            {
+                name: "MP RPG",
+                description: "A simple start to local multiplayer RPG.<br> To access the server you will need to add a line to the command which is the name of the computer.<br> This is shown when you run the server.",
+                parent_path: "MP_RPG",
+                links: [
+                    {
+                        name: "Server",
+                        ref: "Server.jar"
+                    },
+                    {
+                        name: "Client",
+                        ref: "Client.jar"
+                    },
+                    {
+                        name: "Download",
+                        ref: "MP_RPG.zip"
+                    }
+                ]
             }
         ]
     }, // Java
@@ -139,5 +158,6 @@ stories=[
     "Zombification",
     "Haunted Maize Maze",
     "Haunted Maize Maze",
-    "Self Worth vs Self Doubt"
+    "Self Worth vs Self Doubt",
+    "The Downtown Crash"
 ]
