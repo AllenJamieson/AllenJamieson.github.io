@@ -118,6 +118,12 @@ programming=[
                         ref: "MP_RPG.zip"
                     }
                 ]
+            },
+            {
+                name: "Compliance Test",
+                description: "I recently signed a document that held some stuff on all programs that are made while working for them is theirs.<br>Since it is their property, by me posting this, I am sharing their content, which I am refrained from doing",
+                parent_path: "ComplianceTest",
+                links:[{name:"Tester", ref:"ComplianceTest.java"}]
             }
         ]
     }, // Java
@@ -156,7 +162,6 @@ stories=[
     "Gnome Murder",
     "Lost and Frozen",
     "Zombification",
-    "Haunted Maize Maze",
     "Haunted Maize Maze",
     "Self Worth vs Self Doubt",
     "The Downtown Crash"
