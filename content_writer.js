@@ -46,6 +46,10 @@ for (let p = 0; p < programming.length; p++) {
                 }
                 item_div.innerHTML += `<a href='Games/Defold/${name}/${name}.zip'>Code</a>`
             break;
+            case "PicoSystem":
+                item_div.innerHTML += `<a href='Games/PicoSystem/${item.name}/my_project.uf2'>Download</a>`
+                item_div.innerHTML += `<a href='Games/PicoSystem/${item.name}/main.cpp'>Code</a>`
+            break;
         }
         item_list.append(item_div)
         item_list.innerHTML += `<p>${item.description}</p>`

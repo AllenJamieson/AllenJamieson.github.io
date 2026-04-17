@@ -119,12 +119,6 @@ programming=[
                     }
                 ]
             },
-            {
-                name: "Compliance Test",
-                description: "I recently signed a document that held some stuff on all programs that are made while working for them is theirs.<br>Since it is their property, by me posting this, I am sharing their content, which I am refrained from doing",
-                parent_path: "ComplianceTest",
-                links:[{name:"Tester", ref:"ComplianceTest.java"}]
-            }
         ]
     }, // Java
     {
@@ -155,7 +149,26 @@ programming=[
                 types: ["Web", "Android"]
             }
         ]
-    } // Defold
+    }, // Defold
+    {
+        name: "PicoSystem",
+        links: [
+            {
+                name: "Buy",
+                ref: "https://shop.pimoroni.com/products/picosystem?variant=32369546985555"
+            },
+            {
+                name: "Wiki",
+                ref: "https://wiki.picosystem.com"
+            }
+        ],
+        content: [
+            {
+                name: "Pong",
+                description: "Simple Pong game for the Pico System"
+            }
+        ]
+    } // PicoSystem
 ]
 
 stories=[
