@@ -37,6 +37,12 @@ programming=[
                 description: "An RPG with simple movement and sprites",
                 parent_path: "RPG_V2",
                 links: ["RPG.EXE", "rpg.asm"]
+            },
+            {
+                name: "Idle Clicker",
+                description: "A simple clicker game that changes colours",
+                parent_path: "Idle_Clicker",
+                links: ["COOKIE~1.EXE", "cookie_clicker.asm"]
             }
         ]
     }, // DOS
@@ -114,7 +120,7 @@ programming=[
                         ref: "Client.jar"
                     },
                     {
-                        name: "Download",
+                        name: "Code",
                         ref: "MP_RPG.zip"
                     }
                 ]
@@ -129,7 +135,7 @@ programming=[
                 ref: "https://defold.com"
             },
             {
-                name: "Apache 2 Dericative license",
+                name: "Apache 2 Derivative license",
                 ref: "https:/defolf.com/license/"
             },
             {
