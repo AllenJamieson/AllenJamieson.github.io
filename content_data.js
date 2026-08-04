@@ -43,6 +43,12 @@ programming=[
                 description: "A simple clicker game that changes colours",
                 parent_path: "Idle_Clicker",
                 links: ["COOKIE~1.EXE", "cookie_clicker.asm"]
+            },
+            {
+                name: "Draw Many",
+                description: "Simple system that shows many images by 'a' and 'd'.<br>The images are from <a href='https://kettoman.itch.io/free-pixel-characters-pack-32x32'>kettoman</a>, <a href='https://lukyaforge.itch.io/ancientforest'>lukyaforge</a>, <a href='https://ninjagame-dev.itch.io/demon-6rx64'>ninjagame-dev</a>",
+                parent_path: "Draw_Many",
+                links: ["DRAW.EXE", "draw.asm"]
             }
         ]
     }, // DOS
