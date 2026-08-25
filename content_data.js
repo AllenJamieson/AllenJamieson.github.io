@@ -155,6 +155,11 @@ programming=[
                 name: "Toy Catcher",
                 description: "Catch as much toys while avoiding the coal then hear the winning songs",
                 types: ["Web", "Android"]
+            },
+            {
+                name: "Cooler Cleaner",
+                description: "Game about cleaning styrofoam cooler.",
+                types: ["Web"]
             }
         ]
     }, // Defold
