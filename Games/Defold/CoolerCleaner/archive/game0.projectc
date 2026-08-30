@@ -2,7 +2,7 @@
 title = Cooler Cleaners
 version = 1.0
 publisher = 
-developer = 
+developer = Grallieson
 write_log = 0
 write_log_file = 0
 minimum_log_level = 1
@@ -162,7 +162,7 @@ localizations = en
 version_code = 1
 minimum_sdk_version = 21
 target_sdk_version = 36
-package = com.example.todo
+package = com.graview.CoolerCleaners
 gcm_sender_id = 
 fcm_application_id = 
 manifest = /builtins/manifests/android/AndroidManifest.xml
