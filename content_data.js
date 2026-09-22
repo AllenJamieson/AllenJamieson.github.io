@@ -56,8 +56,8 @@ programming=[
         name: "Java",
         links: [
             {
-                name: "Android Studio jdk targeting java 11",
-                ref: "https://developer.android.com/studio"
+                name: "Liberica JDK 25.0.4.1",
+                ref: "https://bell-sw.com"
             }
         ],
         content: [
@@ -92,21 +92,6 @@ programming=[
             {
                 name: "Image Filter",
                 description: "This is a newer system for adding filters on an image combining from earlier versions that are now deleted."
-            },
-            {
-                name: "Rock Paper Scissors",
-                description: "This is a tester project that was to teach me a little about Java Sockets.",
-                parent_path: "RPS",
-                links: [
-                    {
-                        name: "Server",
-                        ref: "RPS.java"
-                    },
-                    {
-                        name: "Client",
-                        ref: "Player.java"
-                    }
-                ]
             },
             {
                 name: "MP RPG",
@@ -190,5 +175,6 @@ stories=[
     "Zombification",
     "Haunted Maize Maze",
     "Self Worth vs Self Doubt",
-    "The Downtown Crash"
+    "The Downtown Crash",
+    "Employee Number 53"
 ]
