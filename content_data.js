@@ -112,6 +112,10 @@ programming=[
                     }
                 ]
             },
+            {
+                name: "Platformer",
+                description: "Simple Platformer with no ceiling or wall collisions"
+            }
         ]
     }, // Java
     {
